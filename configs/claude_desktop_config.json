@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "opensearch-mcp-server": {
+      "command": "/Users/YOUR_USERNAME/.local/bin/opensearch-mcp-server",
+      "args": [],
+      "env": {
+        "OPENSEARCH_URL": "https://localhost:9200",
+        "OPENSEARCH_SSL_VERIFY": "none",
+        "OPENSEARCH_USERNAME": "admin",
+        "OPENSEARCH_PASSWORD": "yourStrongPassword123!"
+      }
+    }
+  }
+}

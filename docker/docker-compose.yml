@@ -1,0 +1,56 @@
+version: '3'
+services:
+  opensearch:
+    image: opensearchproject/opensearch:latest
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "OPENSEARCH_INITIAL_ADMIN_PASSWORD=yourStrongPassword123!"
+      - "plugins.security.ssl.http.enabled=true"
+      - "plugins.security.ssl.transport.enabled=true"
+      - "plugins.security.ssl.http.pemcert_filepath=certs/node.pem"
+      - "plugins.security.ssl.http.pemkey_filepath=certs/node-key.pem"
+      - "plugins.security.ssl.http.pemtrustedcas_filepath=certs/root-ca.pem"
+      - "plugins.security.ssl.transport.pemcert_filepath=certs/node.pem"
+      - "plugins.security.ssl.transport.pemkey_filepath=certs/node-key.pem"
+      - "plugins.security.ssl.transport.pemtrustedcas_filepath=certs/root-ca.pem"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    volumes:
+      - opensearch-data:/usr/share/opensearch/data
+      - ./certs:/usr/share/opensearch/config/certs
+    ports:
+      - 9200:9200
+      - 9600:9600
+    networks:
+      - opensearch-net
+
+  opensearch-dashboards:
+    image: opensearchproject/opensearch-dashboards:latest
+    environment:
+      - 'OPENSEARCH_HOSTS=["https://opensearch:9200"]'
+      - "OPENSEARCH_SSL_VERIFICATIONMODE=none"
+      - "OPENSEARCH_SECURITY_ADMIN_PASSWORD=yourStrongPassword123!"
+      - "SERVER_SSL_ENABLED=true"
+      - "SERVER_SSL_CERTIFICATE=/usr/share/opensearch-dashboards/config/certs/node.pem"
+      - "SERVER_SSL_KEY=/usr/share/opensearch-dashboards/config/certs/node-key.pem"
+    ports:
+      - 5601:5601
+    volumes:
+      - ./certs:/usr/share/opensearch-dashboards/config/certs
+    depends_on:
+      - opensearch
+    networks:
+      - opensearch-net
+
+volumes:
+  opensearch-data:
+
+networks:
+  opensearch-net:

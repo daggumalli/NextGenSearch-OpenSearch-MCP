@@ -1,0 +1,188 @@
+{
+  "books": [
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Classic",
+      "publication_year": 1925,
+      "description": "A classic American novel set in the Jazz Age, exploring themes of wealth, love, and the American Dream",
+      "rating": 4.2,
+      "isbn": "978-0-7432-7356-5",
+      "pages": 180
+    },
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Classic",
+      "publication_year": 1960,
+      "description": "A gripping tale of racial injustice and childhood innocence in the American South",
+      "rating": 4.5,
+      "isbn": "978-0-06-112008-4",
+      "pages": 376
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "genre": "Dystopian",
+      "publication_year": 1949,
+      "description": "A dystopian social science fiction novel about totalitarian control and surveillance",
+      "rating": 4.4,
+      "isbn": "978-0-452-28423-4",
+      "pages": 328
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "genre": "Romance",
+      "publication_year": 1813,
+      "description": "A romantic novel of manners exploring themes of love, reputation, and class",
+      "rating": 4.3,
+      "isbn": "978-0-14-143951-8",
+      "pages": 432
+    },
+    {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "genre": "Coming-of-age",
+      "publication_year": 1951,
+      "description": "A controversial novel about teenage rebellion and alienation in post-war America",
+      "rating": 3.8,
+      "isbn": "978-0-316-76948-0",
+      "pages": 277
+    },
+    {
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "genre": "Science Fiction",
+      "publication_year": 1965,
+      "description": "An epic science fiction novel set on the desert planet Arrakis",
+      "rating": 4.6,
+      "isbn": "978-0-441-17271-9",
+      "pages": 688
+    },
+    {
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "publication_year": 1954,
+      "description": "An epic high fantasy adventure following the quest to destroy the One Ring",
+      "rating": 4.7,
+      "isbn": "978-0-544-00341-5",
+      "pages": 1216
+    }
+  ],
+  "products": [
+    {
+      "name": "Wireless Headphones",
+      "category": "Electronics",
+      "price": 99.99,
+      "description": "High-quality wireless headphones with active noise cancellation and 30-hour battery life",
+      "in_stock": true,
+      "tags": ["audio", "wireless", "electronics", "noise-cancelling"],
+      "brand": "AudioTech",
+      "model": "AT-WH1000"
+    },
+    {
+      "name": "Coffee Maker",
+      "category": "Appliances",
+      "price": 79.99,
+      "description": "Programmable coffee maker with thermal carafe and built-in grinder",
+      "in_stock": true,
+      "tags": ["kitchen", "coffee", "appliances", "programmable"],
+      "brand": "BrewMaster",
+      "model": "BM-CM500"
+    },
+    {
+      "name": "Running Shoes",
+      "category": "Sports",
+      "price": 129.99,
+      "description": "Lightweight running shoes with excellent cushioning and breathable mesh upper",
+      "in_stock": false,
+      "tags": ["shoes", "running", "sports", "lightweight"],
+      "brand": "RunFast",
+      "model": "RF-RS2024"
+    },
+    {
+      "name": "Laptop Stand",
+      "category": "Office",
+      "price": 49.99,
+      "description": "Adjustable aluminum laptop stand for ergonomic working, compatible with 11-17 inch laptops",
+      "in_stock": true,
+      "tags": ["office", "ergonomic", "laptop", "adjustable"],
+      "brand": "DeskPro",
+      "model": "DP-LS100"
+    },
+    {
+      "name": "Yoga Mat",
+      "category": "Fitness",
+      "price": 29.99,
+      "description": "Non-slip yoga mat perfect for home workouts, made from eco-friendly materials",
+      "in_stock": true,
+      "tags": ["yoga", "fitness", "exercise", "eco-friendly"],
+      "brand": "ZenFit",
+      "model": "ZF-YM6mm"
+    },
+    {
+      "name": "Smartphone",
+      "category": "Electronics",
+      "price": 699.99,
+      "description": "Latest smartphone with 5G connectivity, triple camera system, and all-day battery",
+      "in_stock": true,
+      "tags": ["mobile", "5G", "camera", "electronics"],
+      "brand": "TechPhone",
+      "model": "TP-SP2024"
+    },
+    {
+      "name": "Gaming Mouse",
+      "category": "Electronics",
+      "price": 59.99,
+      "description": "High-precision gaming mouse with customizable RGB lighting and programmable buttons",
+      "in_stock": true,
+      "tags": ["gaming", "mouse", "RGB", "programmable"],
+      "brand": "GameGear",
+      "model": "GG-GM300"
+    },
+    {
+      "name": "Blender",
+      "category": "Appliances",
+      "price": 89.99,
+      "description": "High-speed blender perfect for smoothies, soups, and food processing",
+      "in_stock": false,
+      "tags": ["kitchen", "blender", "smoothies", "food-processing"],
+      "brand": "BlendMaster",
+      "model": "BM-B1200"
+    }
+  ],
+  "articles": [
+    {
+      "title": "The Future of Search Technology",
+      "author": "Dr. Sarah Chen",
+      "category": "Technology",
+      "publish_date": "2024-01-15",
+      "content": "Search technology is evolving rapidly with the integration of AI and machine learning. Vector search and semantic understanding are becoming crucial for next-generation search experiences.",
+      "tags": ["search", "AI", "machine-learning", "vector-search"],
+      "views": 15420,
+      "likes": 342
+    },
+    {
+      "title": "OpenSearch vs Elasticsearch: A Comprehensive Comparison",
+      "author": "Mike Rodriguez",
+      "category": "Technology",
+      "publish_date": "2024-02-03",
+      "content": "An in-depth analysis of OpenSearch and Elasticsearch, comparing features, performance, licensing, and community support to help you make the right choice for your search infrastructure.",
+      "tags": ["opensearch", "elasticsearch", "comparison", "search-engine"],
+      "views": 8930,
+      "likes": 156
+    },
+    {
+      "title": "Building Scalable Search Applications",
+      "author": "Jennifer Park",
+      "category": "Development",
+      "publish_date": "2024-01-28",
+      "content": "Best practices for building search applications that can scale to millions of documents and thousands of concurrent users. Covers indexing strategies, query optimization, and infrastructure design.",
+      "tags": ["scalability", "search", "performance", "architecture"],
+      "views": 12100,
+      "likes": 289
+    }
+  ]
+}
