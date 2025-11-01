@@ -2,6 +2,10 @@
 
 A complete demonstration project showcasing OpenSearch integration with Model Context Protocol (MCP) for natural language interactions with Amazon Q and Anthropic Claude Desktop.
 
+Next-gen AI search with Large Language Models(LLM) &  Model Context Protocol (MCP) expands capabilities with natural language queries with persistent memory to provide conversational search experiences.
+
+Model Context Protocol is emerging as a de facto standard for RAG (Retrieval Augment Generation) and Knowledge Bases integrations, allowing multiple AI agents to connect seamlessly with services to augment LLM responses
+
 ## 🚀 Quick Start
 
 Clone this repository and get up and running in minutes:
