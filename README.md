@@ -114,7 +114,10 @@ setup.bat
    - Default credentials: `admin` / `yourStrongPassword123!`
 
 3. **Configure Your LLM**:
-   - The setup script automatically configures both Claude Desktop and Amazon Q
+   - The setup script automatically configures both Claude Desktop (https://www.claude.com/download) and Amazon Q
+   - After Claude desktop installation, navigate to profile >> settings >> Developer >> Edit config (Local MCP Servers)
+   - Update configuration file information with the config/claude_desktop_config.json
+   - Remember to use the correct path for uvx in your "command": "/Users/**srikanthdaggumalli**/.local/bin/uvx",
    - **Auto-detects the correct uvx path** for your system
    - Restart your LLM application to load the new configuration
 
