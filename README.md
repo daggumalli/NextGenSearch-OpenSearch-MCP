@@ -6,50 +6,57 @@ A complete demonstration project showcasing OpenSearch integration with Model Co
 
 Clone this repository and get up and running in minutes:
 
+### macOS/Linux:
 ```bash
 git clone https://github.com/daggumalli/NextGenSearch-OpenSearch-MCP.git
 cd NextGenSearch-OpenSearch-MCP
 ./setup.sh
 ```
 
-## 📋 Prerequisites
-
-- Docker and Docker Compose installed
-- Python 3.x installed
-- pipx installed (`pip install pipx`)
-- Amazon Q CLI or Anthropic Claude Desktop
-- Minimum 16GB RAM (32GB recommended)
-
-## 🏗️ What's Included
-
-- **Local OpenSearch Instance**: Complete Docker setup with security enabled
-- **Sample Data**: Pre-loaded datasets for immediate testing
-- **MCP Server Configuration**: Ready-to-use configurations for both Amazon Q and Claude
-- **Example Queries**: Natural language examples to get you started
-- **Automated Setup**: One-command deployment
-
-## 📁 Project Structure
-
+### Windows:
+```cmd
+git clone https://github.com/daggumalli/NextGenSearch-OpenSearch-MCP.git
+cd NextGenSearch-OpenSearch-MCP
+setup.bat
 ```
-├── docker/                 # Docker configurations
-├── data/                   # Sample datasets
-├── configs/               # MCP configurations
-├── scripts/               # Setup and utility scripts
-├── examples/              # Example queries and use cases
-└── docs/                  # Additional documentation
-```
-
-## 🔧 Manual Setup
-
-If you prefer to set up manually, follow the detailed guide below.
 
 ## 📋 Prerequisites
 
 - Docker and Docker Compose installed
-- Python 3.x installed
-- pipx installed (`pip install pipx`)
+- Python 3.10+ installed
+- uv installed (Python package manager) - automatically installed by setup script
 - Amazon Q CLI or Anthropic Claude Desktop
 - Minimum 16GB RAM (32GB recommended)
+
+## 🏗️ How It Works
+
+### Architecture Flow
+```
+👤 User Query → 🤖 Claude Desktop → 📡 MCP Protocol → 🔧 OpenSearch MCP Server → 🔍 OpenSearch Service
+                                                                                           ↓
+📊 Sample Data ← 📚 Books Index + 🛍️ Products Index + 📰 Articles Index ←────────────────┘
+```
+
+### Component Interaction:
+1. **User** asks natural language question in Claude Desktop
+2. **Claude Desktop** sends MCP request to OpenSearch MCP Server
+3. **MCP Server** translates to OpenSearch API calls
+4. **OpenSearch** processes queries and returns results
+5. **Response flows back** through the chain to the user
+
+## 🖥️ Cross-Platform Support
+
+This demo works on **Windows, macOS, and Linux**:
+
+- **Windows**: Use `setup.bat` and `.bat` scripts
+- **macOS/Linux**: Use `setup.sh` and `.sh` scripts
+- **Docker**: Identical across all platforms
+- **MCP Server**: Works with `uvx` on all platforms
+
+### Windows-Specific Notes:
+- Requires PowerShell for `uv` installation
+- Uses `%APPDATA%\Claude\` for Claude Desktop config
+- Auto-detects `uvx.exe` path in `%USERPROFILE%\.local\bin\`
 
 ## 🏗️ What's Included
 
@@ -71,22 +78,34 @@ If you prefer to set up manually, follow the detailed guide below.
 │   ├── claude_desktop_config.json
 │   └── amazon_q_mcp.json
 ├── scripts/               # Setup and utility scripts
-│   ├── load_sample_data.sh
-│   └── setup_mcp_configs.sh
+│   ├── load_sample_data.sh    # macOS/Linux
+│   ├── load_sample_data.bat   # Windows
+│   ├── setup_mcp_configs.sh   # macOS/Linux
+│   └── setup_mcp_configs.bat  # Windows
 ├── examples/              # Example queries and use cases
 │   └── natural_language_queries.md
 ├── docs/                  # Additional documentation
 │   └── SETUP_GUIDE.md
-└── setup.sh              # Main setup script
+├── setup.sh              # Main setup script (macOS/Linux)
+└── setup.bat             # Main setup script (Windows)
 ```
 
 ## 🚀 Quick Start
 
 1. **Clone and Setup**:
+
+**macOS/Linux:**
 ```bash
 git clone https://github.com/daggumalli/NextGenSearch-OpenSearch-MCP.git
 cd NextGenSearch-OpenSearch-MCP
 ./setup.sh
+```
+
+**Windows:**
+```cmd
+git clone https://github.com/daggumalli/NextGenSearch-OpenSearch-MCP.git
+cd NextGenSearch-OpenSearch-MCP
+setup.bat
 ```
 
 2. **Access OpenSearch**:
@@ -96,6 +115,7 @@ cd NextGenSearch-OpenSearch-MCP
 
 3. **Configure Your LLM**:
    - The setup script automatically configures both Claude Desktop and Amazon Q
+   - **Auto-detects the correct uvx path** for your system
    - Restart your LLM application to load the new configuration
 
 4. **Try Natural Language Queries**:
@@ -142,23 +162,29 @@ The demo includes three pre-loaded indices with sample data:
 
 ## 🛠️ Troubleshooting
 
-### Common Issues
+### Quick Fixes
 
 **MCP Server Not Found**:
-- Ensure `opensearch-mcp-server` is installed: `pipx install opensearch-mcp-server`
-- Check the path in your configuration files
-- Restart your LLM application
+- Check uvx path: `which uvx` (macOS/Linux) or `where uvx` (Windows)
+- Restart your LLM application after setup
+- See [detailed troubleshooting guide](docs/TROUBLESHOOTING.md#uvx-path-issues)
 
 **OpenSearch Connection Failed**:
 - Verify OpenSearch is running: `docker ps`
 - Check logs: `docker-compose -f docker/docker-compose.yml logs opensearch`
-- Ensure ports 9200 and 5601 are available
+- See [OpenSearch service issues](docs/TROUBLESHOOTING.md#opensearch-service-issues)
+
+**Python Version Issues**:
+- OpenSearch MCP Server requires Python 3.10+
+- See [Python version troubleshooting](docs/TROUBLESHOOTING.md#python-version-issues)
 
 **SSL Certificate Issues**:
-- Regenerate certificates: `rm -rf docker/certs && ./setup.sh`
-- Check certificate permissions
+- Check SSL environment variables in your MCP config
+- See [SSL troubleshooting guide](docs/TROUBLESHOOTING.md#ssl-certificate-issues)
 
-For detailed troubleshooting, see our [setup guide](docs/SETUP_GUIDE.md#troubleshooting).
+📚 **Comprehensive Guides**:
+- [🔧 Complete Troubleshooting Guide](docs/TROUBLESHOOTING.md)
+- [📖 Detailed Setup Guide](docs/SETUP_GUIDE.md)
 
 ## 🔒 Security Notes
 
@@ -181,12 +207,18 @@ We welcome contributions! Please feel free to:
 - Submit pull requests
 - Improve documentation
 
-## 📚 Additional Resources
+## 📚 Documentation & Resources
 
+### 📖 **Project Documentation**
+- [🔧 Troubleshooting Guide](docs/TROUBLESHOOTING.md) - Common issues and solutions
+- [📖 Detailed Setup Guide](docs/SETUP_GUIDE.md) - Manual installation steps
+- [💡 Natural Language Examples](examples/natural_language_queries.md) - Query examples
+
+### 🔗 **External Resources**
 - [OpenSearch Documentation](https://opensearch.org/docs/latest/)
 - [MCP Protocol Documentation](https://modelcontextprotocol.io/introduction)
-- [Natural Language Query Examples](examples/natural_language_queries.md)
-- [Detailed Setup Guide](docs/SETUP_GUIDE.md)
+- [Claude Desktop](https://claude.ai/desktop) - Download Claude Desktop
+- [Amazon Q](https://aws.amazon.com/q/) - AWS AI Assistant
 
 ## 🛑 Stopping the Demo
 
