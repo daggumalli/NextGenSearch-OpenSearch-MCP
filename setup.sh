@@ -32,9 +32,13 @@ fi
 
 echo "✅ Prerequisites check completed"
 
-# Install OpenSearch MCP Server
-echo "📦 Installing OpenSearch MCP Server..."
-pipx install opensearch-mcp-server
+# Install uv (Python package manager)
+echo "📦 Installing uv (Python package manager)..."
+curl -LsSf https://astral.sh/uv/install.sh | sh
+export PATH="$HOME/.local/bin:$PATH"
+
+echo "✅ uv installed successfully"
+echo "ℹ️  OpenSearch MCP Server will be automatically downloaded when first used via uvx"
 
 # Generate SSL certificates for OpenSearch
 echo "🔐 Generating SSL certificates..."

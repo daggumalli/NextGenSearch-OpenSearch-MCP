@@ -1,13 +1,15 @@
 {
   "mcpServers": {
     "opensearch-mcp-server": {
-      "command": "/Users/YOUR_USERNAME/.local/bin/opensearch-mcp-server",
-      "args": [],
+      "command": "/Users/srikanthdaggumalli/.local/bin/uvx",
+      "args": ["opensearch-mcp-server-py"],
       "env": {
         "OPENSEARCH_URL": "https://localhost:9200",
-        "OPENSEARCH_SSL_VERIFY": "none",
         "OPENSEARCH_USERNAME": "admin",
-        "OPENSEARCH_PASSWORD": "yourStrongPassword123!"
+        "OPENSEARCH_PASSWORD": "yourStrongPassword123!",
+        "OPENSEARCH_VERIFY_CERTS": "false",
+        "OPENSEARCH_SSL_VERIFY": "false",
+        "OPENSEARCH_USE_SSL": "true"
       }
     }
   }
