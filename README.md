@@ -6,6 +6,9 @@ Next-gen AI search with Large Language Models(LLM) &  Model Context Protocol (MC
 
 Model Context Protocol is emerging as a de facto standard for RAG (Retrieval Augment Generation) and Knowledge Bases integrations, allowing multiple AI agents to connect seamlessly with services to augment LLM responses
 
+## Demo
+https://www.youtube.com/watch?v=bHra8VwQvR8
+
 ## 🚀 Quick Start
 
 Clone this repository and get up and running in minutes:
