@@ -110,17 +110,27 @@ Upon successfull installation of the setup scripts
 3. **Configure Your LLM**:
    - The setup script automatically configures both Claude Desktop (https://www.claude.com/download) and Amazon Q
    - After Claude desktop installation, navigate to profile >> settings >> Developer >> Edit config (Local MCP Servers)
-   - 
+    ![Claude Desktop Local MCP server config](images/Claude_Local_MCP_Server_settings.png)
    - Update configuration file information with the config/claude_desktop_config.json
+    ![Claude Desktop MCP config json](images/claude_desktop_config_json.png)
    - Remember to use the correct path for uvx in your "command": "/Users/**srikanthdaggumalli**/.local/bin/uvx",
    - **Auto-detects the correct uvx path** for your system
    - Restart your LLM application to load the new configuration
 
-4. **Try Natural Language Queries**:
+4. **Add Sample Data**
+   ![OpenSearch Dashboard Add sample data 1](images/OpenSearch_Add_sample_data_1.png)
+
+   ![OpenSearch Dashboard Add sample data 2](images/OpenSearch_Add_sample_data_2.png)
+
+5. **Verify Data from DevTools**
+   ![OpenSearch Dashboard Add sample data 2](images/Dev_tools_verify_data.png)
+   
+6. **Try Natural Language Queries**:
    ```
    "Show me all available indices"
-   "Search for books by George Orwell"
-   "Create a new index called 'users' with name and email fields"
+   "Search for products"
+   "Create a sales data insights"
+   "give me performance bottlenecks from observability logs"
    ```
 
 ## 🔧 Manual Setup
