@@ -97,23 +97,10 @@ This demo works on **Windows, macOS, and Linux**:
 └── setup.bat             # Main setup script (Windows)
 ```
 
-## 🚀 Quick Start
+## Setup
 
 1. **Clone and Setup**:
-
-**macOS/Linux:**
-```bash
-git clone https://github.com/daggumalli/NextGenSearch-OpenSearch-MCP.git
-cd NextGenSearch-OpenSearch-MCP
-./setup.sh
-```
-
-**Windows:**
-```cmd
-git clone https://github.com/daggumalli/NextGenSearch-OpenSearch-MCP.git
-cd NextGenSearch-OpenSearch-MCP
-setup.bat
-```
+Upon successfull installation of the setup scripts
 
 2. **Access OpenSearch**:
    - OpenSearch API: https://localhost:9200
@@ -123,6 +110,7 @@ setup.bat
 3. **Configure Your LLM**:
    - The setup script automatically configures both Claude Desktop (https://www.claude.com/download) and Amazon Q
    - After Claude desktop installation, navigate to profile >> settings >> Developer >> Edit config (Local MCP Servers)
+   - 
    - Update configuration file information with the config/claude_desktop_config.json
    - Remember to use the correct path for uvx in your "command": "/Users/**srikanthdaggumalli**/.local/bin/uvx",
    - **Auto-detects the correct uvx path** for your system
