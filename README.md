@@ -107,8 +107,10 @@ Upon successfull installation of the setup scripts
    - OpenSearch Dashboards: https://localhost:5601
    - Default credentials: `admin` / `yourStrongPassword123!`
 
-3. **Configure Your LLM**:
+3. **Configure Your Claude LLM for User Interaction and Search**:
    - The setup script automatically configures both Claude Desktop (https://www.claude.com/download) and Amazon Q
+   - As discussed in our architecture flow, Claude Desktop acts like an AI Application(or AI agent) where users can use this interface to chat with OpenSearch.
+   - Go to Claude Desktop Settings, and update the MCP configuration. This MCP configuration will have all the details required to connect to your OpenSearch instance via MCP protocol.
    - After Claude desktop installation, navigate to profile >> settings >> Developer >> Edit config (Local MCP Servers)
     ![Claude Desktop Local MCP server config](images/Claude_Local_MCP_Server_settings.png)
    - Update configuration file information with the config/claude_desktop_config.json
