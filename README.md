@@ -118,14 +118,19 @@ Upon successfull installation of the setup scripts
    - Restart your LLM application to load the new configuration
 
 4. **Add Sample Data**
+   From your OpenSearch instance, open Dashboards DevTools sample data. You can load this sample data which is provided and can be loaded default. 
+   Step1: Login to OpenSearch Dashboard page. On the Landing page, once you confirm on the Global, you will see an option to add sample data. 
+
    ![OpenSearch Dashboard Add sample data 1](images/OpenSearch_Add_sample_data_1.png)
+
+   Step2 : From the “Add Sample Data” Page, add “Sample eCommerce Orders” & "Sample Observability Logs, traces & metrics". Once data added you can view the data from the same page.
 
    ![OpenSearch Dashboard Add sample data 2](images/OpenSearch_Add_sample_data_2.png)
 
-5. **Verify Data from DevTools**
+6. **Verify Data from DevTools**
    ![OpenSearch Dashboard Add sample data 2](images/Dev_tools_verify_data.png)
    
-6. **Try Natural Language Queries**:
+7. **Try Natural Language Queries**:
    ```
    "Show me all available indices"
    "Search for products"
